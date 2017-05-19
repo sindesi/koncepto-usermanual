@@ -1,4 +1,5 @@
 *.log
-*.pfd
+*.pdf
 *.out
 *.aux
+*.idx
