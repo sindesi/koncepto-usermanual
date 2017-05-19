@@ -1,0 +1,201 @@
+\newpage
+\section{Interface Gráfico}
+
+% Todo este programa tenta ser o mais simples possível, contudo
+% concordamos que este é um compromisso que nem sempre é simples de conseguir.
+
+% Por esta razão passamos a apresentar o inteface de utilizador de forma a tornar o 
+% ambiente o mais familiar possível, permitindo aos utilizadores usarem o programa de 
+% uma forma fluida e natural.
+
+
+
+\subsection{Setas de Selecção}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[height=5cm]{../images/setasSelecao.png}
+\caption[Submanifold]{Setas de Selecção.}
+\end{center}
+\end{figure}
+
+
+As setas de selecção permitem seleccionar um elemento de um lista.
+
+As setas são representadas por triângulos em cor cinza no fundo da janela onde se encontra a lista. 
+
+Pressionando as zonas onde se encontram os triângulos, poder-se-á navegar para cima e para baixo nos elementos da lista.
+
+\subsection{Botão Definir}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[height=3cm]{../images/botaodefinir.png}
+\caption[Submanifold]{Botão Definir.}
+\label{botaodefinir}
+\end{center}
+\end{figure}
+
+
+É muito comum aparecer botões de \emph{toggle} ou de comutação. 
+
+Para facilitar o acesso a estes botões, vai encontrar sempre associado
+a estas listas de opções um botão \keystroke{Definir}.
+
+Cada vez que pressionar o botão \keystroke{Definir} irá marcar a opção 
+como activa ou inactiva alternadamente.
+
+Caso não tenha a certeza da alteração que pretende fazer, terá sempre 
+disponível um botão que permite sair da configuração que está a fazer.
+
+
+
+
+
+\newpage
+\subsection{Teclados}
+
+O interface do utilizador é sempre o ecrã, por este motivo é necessário que 
+haja uma forma que se possa interagir directamente com o programa. 
+Por isso haverá sempre disponível um teclado para todas as interacções do operador.
+
+Estas opções são simplificadas ao máximo de forma a evitar o recurso aos mesmos,
+ pois pretende-se que a operabilidade 
+seja o mais célere possível.
+
+Existem dois tipos de teclado disponíveis, o alfanumérico e o numérico, que estarão disponíveis
+de acordo com as necessidades.
+
+
+\subsubsection{Teclado alfanumérico}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[height=5cm]{../images/teclado.png}
+\caption[Submanifold]{Representação do teclado alfanumérico no ecrã.}
+\label{fig:alfanumerico}
+\end{center}
+\end{figure}
+
+
+
+O teclado alfanumérico tem uma abrangência maior, e é invocado em quase todos os casos em
+que se prevê a necessidade dele. O teclado está representado na Figura \ref{fig:alfanumerico}
+
+Para colocar maiúsculas poderá pressionar a tecla \keystroke{CAPS} à esquerda, ou simplesmente pressionar
+uma das teclas \keystroke{SHIFT} disponíveis em cada lado do teclado.
+
+Se por alguma razão se enganou e pretender voltar ao menu anterior sem modificar os dados, bastará pressionar
+a tecla \keystroke{ESC} que se encontra no canto superior esquerdo.
+
+Para validar os dados submetidos, pressione a tecla \keystroke{$\hookleftarrow$} (ou ''Enter'') que aqui é representada como
+um caractere de mudança de linha no lado direito do teclado.
+
+
+\subsubsection{Teclado numérico}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[height=5cm]{../images/numerico.png}
+\caption[Submanifold]{Representação do teclado numérico no ecrã.}
+\end{center}
+\end{figure}
+
+
+O teclado numérico é utilizado para submissão de palavras chave de utilizadores, códigos de barra,
+indicação de quantidades, preços, taxas, etc, ...
+
+Este teclado conta com os botões:
+
+
+ \begin{table}[ht]
+%  \caption{Hardware} 
+ \centering
+\small
+\def\arraystretch{1.5}
+ \begin{tabular}{c p{12cm}}  %   l c r r } % centered columns 
+ \textbf{Botão} & \textbf{Significado}  \\ % Garantia & Descrição & Qtd & C. Unit & Subtotal \\ [0.5ex]
+%  \multicolumn{6}{l}{\textbf{Servidor}} \\			
+ \hline
+\keystroke{Atrás} & permite apagar o último caractere pressionado. \\
+\keystroke{Cancelar} &  voltará ao menu anterior sem modificar qualquer dados. \\
+\keystroke{OK} & Validará os dados colocados. \\
+%  \multicolumn{6}{l}{\textbf{Bastidor}} \\			
+ \hline
+ \end{tabular}
+ \end{table}
+
+
+
+
+
+
+
+Os números premidos deverão aparecer sempre no ecrã, salvo duas excepções: a introdução de uma 
+palavra passe, e a senha de identificação de um cartão cliente.
+
+
+
+
+
+
+\subsection{Botão Propriedades}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[height=5cm]{../images/propriedades2.png}
+\caption[Submanifold]{Propriedades de Botões.}
+\label{propriedadesbotoes}
+\end{center}
+\end{figure}
+
+
+Em diversos pontos do programa, pode-se encontrar o botão \keystroke{Propriedades}.
+
+Esta opção permite personalizar botões de forma a que ganhem realce no interface gráfico. As características que se podem modificar são:
+ % a secção em causa permitido desde uma simples troca de cor, aplicação de textura ou aplicação de uma imagem.
+
+
+
+ \begin{table}[ht]
+%  \caption{Hardware} 
+ \centering
+\small
+\def\arraystretch{1.5}
+ \begin{tabular}{c p{12cm}}  %   l c r r } % centered columns 
+ \textbf{Botão} & \textbf{Significado}  \\ % Garantia & Descrição & Qtd & C. Unit & Subtotal \\ [0.5ex]
+%  \multicolumn{6}{l}{\textbf{Servidor}} \\			
+ \hline
+ 	\keystroke{Cor de Fundo} &  Muda a cor de fundo do botão. \\
+	\keystroke{Textura de fundo} &  Associa uma imagem como padrão de fundo do botão. \\ 
+	\keystroke{Cor de Texto} &  Altera a cor do texto. \\ 
+	\keystroke{Letra} & Altera o tipo de letra dos caracteres do botão. \\ 
+	\keystroke{Imagem} & Associa uma imagem ao botão. \\ 
+	\keystroke{Limpar Imagem} & Desassocia qualquer imagem que esteja associada a este botão. \\ 
+	\keystroke{Limpar Propriedades} & este botão limpa todas as características fazendo com que o botão fique com os valores por omissão. \\
+%  \multicolumn{6}{l}{\textbf{Bastidor}} \\			
+ \hline
+ \end{tabular}
+ \end{table}
+
+
+
+
+
+% \begin{bclogo}[couleur=blue!10,arrondi=0.1,logo=\bctakecare,ombre=true]
+\bcatencao{Tipos de letra e imagens}{
+Quando fizer alterações, tenha presente que:
+\begin{itemize}
+\item os tipos de letra serão somente as disponibilizadas pelo sistema operativo, podendo em muitos casos não se encontrarem muitos tipos de letra instalados.
+\item as imagens disponibilizadas são as imagens padrão incluídas no software, podendo ser aumentado mediante solicitação. 
+\end{itemize}
+}
+
+
+
+
+% \subsection{Caixas}
+
+% \subsection{Barras de Selecção}
+
+

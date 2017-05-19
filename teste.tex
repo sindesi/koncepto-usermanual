@@ -1,0 +1,979 @@
+ \documentclass[a4paper,11pt,openany]{memoir}
+%  \documentclass[a4paper,11pt,openany]{book}
+
+%  \topmargin 0in
+%  \textheight 7in
+%  \textwidth 6in
+%  \oddsidemargin 0in
+%  \evensidemargin 0in
+%  \headheight 1.2in % 7pt
+%  \headsep 0.25in
+
+
+
+
+\setlrmarginsandblock{2.5cm}{*}{1} 
+\setulmarginsandblock{2.5cm}{2.5cm}{*}
+\setmarginnotes{2.5mm}{2cm}{1em}
+\checkandfixthelayout
+
+
+
+\usepackage[colorlinks]{hyperref}
+%  \usepackage{hyperref}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{color,calc,graphicx,soul,fourier}
+% \definecolor{nicered}{rgb}{.647,.129,.149}
+\definecolor{nicered}{rgb}{.0,.0,.255}
+\makeatletter
+\newlength\dlf@normtxtw
+\setlength\dlf@normtxtw{\textwidth}
+\def\myhelvetfont{\def\sfdefault{mdput}}
+\newsavebox{\feline@chapter}
+\newcommand\feline@chapter@marker[1][4cm]{%
+\sbox\feline@chapter{%
+\resizebox{!}{#1}{\fboxsep=1pt%
+\colorbox{nicered}{\color{white}\bfseries\sffamily\thechapter}%
+}}%
+\rotatebox{90}{%
+\resizebox{%
+\heightof{\usebox{\feline@chapter}}+\depthof{\usebox{\feline@chapter}}}%
+{!}{\scshape\so\@chapapp}}\quad%
+\raisebox{\depthof{\usebox{\feline@chapter}}}{\usebox{\feline@chapter}}%
+}
+\newcommand\feline@chm[1][4cm]{%
+\sbox\feline@chapter{\feline@chapter@marker[#1]}%
+\makebox[0pt][l]{% aka \rlap
+\makebox[1cm][r]{\usebox\feline@chapter}%
+}}
+\makechapterstyle{daleif1}{
+\renewcommand\chapnamefont{\normalfont\Large\scshape\raggedleft\so}
+\renewcommand\chaptitlefont{\normalfont\huge\bfseries\scshape\color{nicered}}
+\renewcommand\chapternamenum{}
+\renewcommand\printchaptername{}
+\renewcommand\printchapternum{\null\hfill\feline@chm[2.5cm]\par}
+\renewcommand\afterchapternum{\par\vskip\midchapskip}
+\renewcommand\printchaptertitle[1]{\chaptitlefont\raggedleft ##1\par}
+}
+\makeatother
+\chapterstyle{daleif1}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{
+  calc,
+  graphicx,
+  url,
+  fancyvrb,
+  multicol,
+  kvsetkeys
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Linguagem e Acentuacao
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[portuges]{babel}
+% \usepackage[latin1]{inputenc}      
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tipo de Letra
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{helvet} \renewcommand{\familydefault}{\sfdefault}
+% \usepackage[scaled]{uarial}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pacote de gráficos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pacote de gráficos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \usepackage{graphicx}
+
+\usepackage{boxedminipage}
+
+
+
+
+\begin{document}
+
+
+
+\tableofcontents
+
+\newpage
+\part{Introdução}
+
+\chapter{Antes de começar}
+
+\section{FrontOffice Koncepto}     %   1.  FrontOffice Koncepto
+\input{licenca}                    %   1.1.      Licença 
+\input{acordo}                     %   1.2.      Acordo de Licença de utilização de Software 
+%
+
+\section{Para quem se destina este manual}
+
+Este texto tem como objectivo servir de apoio na utilização do produto em causa.
+
+Servirá como referência base na iniciação e conhecimento do produto. Pretende-se
+que ele sirva como um guia de referência rápida para o apoio na execução das
+principais tarefas que o produto disponibiliza.
+
+
+
+\subsection{Requisitos mínimos}
+
+Para utilização desta aplicação são considerados os seguintes requisitos mínimos:
+\begin{itemize}
+\item Conhecimentos básicos na área de negócio.
+\item Conhecimentos básicos de informática.
+\item Conhecimentos básicos da aplicação de frontoffice Koncepto e conceitos adjacentes.
+\end{itemize}
+
+
+% \section{Nomenclatura utilizada neste manual}
+
+
+\chapter{Guia de Iniciação Rápida}  %  
+
+
+\input{interface}
+
+\newpage
+
+\input{iniciacaorapida}
+
+\newpage
+
+\input{faq}
+
+\part{Procedimentos}
+
+
+\section{Como iniciar o trabalho?}
+Deverá ligar todo o equipamento, começando pelo hardware periférico e de seguida
+o ponto de venda.
+\subsection{Como ligar a impressora?}
+Esta operação depende da marca e do modelo disponível. De modo geral, deverá
+pressionar um botão (on/off), e obter como resposta o acendimento de um led
+indicador.
+
+Para mais indicações deverá recorrer ao manual disponibilizado pelo fabricante do
+equipamento.
+
+\subsection{Como ligar a máquina?}
+Esta operação depende da marca e do modelo disponível. De modo geral, deverá
+pressionar um botão (on/off), e obter como resposta o acendimento de um led
+indicador.
+
+Para mais indicações deverá recorrer ao manual disponibilizado pelo fabricante do
+equipamento.
+
+\section{Como aceder à aplicação?}
+
+Ao iniciar o ponto de venda, deverá aguardar o arranque do sistema operativo, após
+o qual a aplicação será iniciada automaticamente. É apresentada a interface
+principal com a listagem de utilizadores pertencentes à sessão actual. Apenas estes
+têm acesso à aplicação.
+
+Para aceder deverá pressionar o botão com o utilizador respectivo, e indicar a chave
+de acesso, caso lhe seja requisitada.
+
+\section{Como determinar se existe alguma sessão activa?}
+Acedendo ao nível Gerente, escolhe-se o botão Gestor de Sessão e verifica-se qual
+a sessão principal a decorrer.
+
+\section{Como iniciar uma sessão?}
+Para iniciar uma sessão basta aceder ao nível de Gerente, no botão Gestor de
+Sessão e carregar no botão Iniciar Sessão.
+
+
+\section{Como ver um documento já emitido?}
+Através do botão História que se encontra no nível de Gerente.
+Este botão permite o
+acesso a documentos passados que surgem da utilização da aplicação. Podem ser
+vistos os detalhes dos documentos, imprimir duplicados,
+criar notas de crédito e anular consumos.
+
+Na aplicação Koncepto, ao realizar uma venda é gerado um documento do tipo
+modelo de Venda a dinheiro simplificado.
+
+O Koncepto não emite facturas. Caso a implementação realizada
+o permita, poderão ser realizados consumos a crédito, sendo a facturação realizada
+à posteriori numa aplicação de backoffice, tal como o \textbf{Regi X12}.
+
+\section{Gestão de Mesas}
+
+Na parte das \textbf{Zonas}, pode-se fazer o acompanhamento do estado das mesas e assim
+permitir verificar em tempo real o plano geral dos consumos do estabelecimento.
+
+Na parte de gestão das mesas, pode-se considerar úteis duas operações:
+\begin{itemize}
+\item \textbf{Juntar mesas} --- situação em por exemplo vários elementos do mesmo agregado familiar
+se distribuem por mesas distintas e então se pretende uma factura única com todos os items
+consumidos, ou haja a solicitação do cliente para fazer a junção física de duas mesas ou mais mesas;
+\item \textbf{transferir mesa} --- situação em que por alguma razão uma ou mais pessoas de uma mesa
+se mudam para outro local ou zona do espaço comercial. 
+\end{itemize}
+
+\subsection{Como juntar mesas?}
+
+Pressione o botão \textbf{Juntar} que se encontra no nível de Zonas.
+
+Clique numa das mesas que prentende juntar.
+
+clique na segunda mesa que prentende juntar.
+
+Agora as duas mesas têm o mesmo nome e o somatório dos valores das duas mesas.
+
+\section{Como seleccionar um produto para consumo?}
+
+No nível das Zonas pressionar o botão com a mesa pretendida. A aplicação muda
+para o nível das Mesas, mostrando os produtos organizados por índices e páginas.
+Neste nível, deverá escolher os produtos pretendidos, pressionando o botão com o
+seu nome. Estes serão apresentados numa listagem com o conteúdo de todos os
+produtos a fornecer.
+
+
+\subsection{Como pedir?}
+O botão Pedir gera a ordem de entrega de todos os produtos seleccionados para
+consumo, ainda por pedir, remetendo o pedido para as impressoras pré-definidas
+para tal (caso existam e estejam definidas). A funcionalidade “Pedir” pode ser
+configurada de modo a que ocorra automaticamente ao fazer o registo.
+
+\subsection{Como cancelar um produto já seleccionado?}
+Antes de registar, deverá seleccionar o produto a cancelar, navegando na lista de
+produtos adicionados para consumo. Depois de seleccionado, deverá pressionar o
+botão Cancelar, sendo o mesmo removido da listagem.
+
+
+\subsection{Como dividir mesas?}
+Através do botão Dividir mesas que se encontra no nível Mesa é possível realizar a
+divisão de uma mesa em várias sub-mesas. A divisão (artigos/preços) pode ser
+realizada de forma manual ou automática.
+
+É possível, depois, controlar o que se pretende em cada uma das divisões, podendo mesmo acrescentar ou cancelar
+produtos.
+
+
+\subsection{Como registar?}
+No caso de uma venda a dinheiro o registo é realizado através do botão Registo ou
+Factura. A mesa é fechada e é apresentada uma janela onde é permitido escolher o
+método de pagamento, fazer o troco e anexar um cliente ao pagamento.
+
+\subsection{Como abrir a gaveta?}
+Através do botão abrir Gaveta no nível de Mesas, quando disponível.
+
+
+\subsection{Como fazer uma nota de crédito?}
+Através do botão História que se encontra no nível de Gerente. Deverá localizar o
+documento a creditar, ver o documento de modo a garantir que seleccionou o
+documento correcto e então emitir a nota de crédito, pressionando o botão com o
+mesmo nome.
+
+\subsection{Como reimprimir uma factura?}
+Esta função pode ser efectuada na janela aberta pelo botão História, no nível de
+Gerente. Aí, deverá localizar o documento que lhe interessa e depois Imprimir.
+
+
+
+
+\chapter{Consumos a crédito}
+
+O Koncepto poderá ser configurado para que realize sempre vendas a dinheiro,
+sempre consumos a crédito, ou funciona de uma forma composta. Avançamos com
+indicações base para esta última situação, a mais complexa, que integra as
+anteriores.
+
+\section{Como faço um consumo a crédito?}
+Um consumo a crédito pode ser efectuado através do botão Cartão Cliente onde
+surge uma janela com três opções: Venda Normal onde volta à venda normal,
+Código de Cliente onde se pode colocar o número de cartão manualmente, e por
+último Cancelar.
+
+Através do botão Cartão de Cliente (se activo), no nível Mesa, abrirá uma janela que
+permite fazer uma venda a determinado cliente. Isto possibilita atribuir pontos,
+descontos ou consumos a clientes específicos.
+
+\section{Como faço o cancelamento de um consumo a crédito?}
+Através do botão História no nível Gerente. Para cancelar o registo de um consumo
+a crédito deve identificar e seleccionar o consumo na listagem apresentada e
+pressionar no botão Nota de crédito.
+
+\chapter{Reservas}
+
+O Koncepto poderá ser configurado de forma a emitir reservas. Estas podem ser
+apenas indicativas ou debitadas, e neste último caso, através da adição automática
+de um produto ao documento de consumo. Estas parametrizações deverão ser
+definidas na configuração inicial, aquando da instalação do sistema,
+
+\section{Como criar Índices para as reservas?}
+Para criar Índices para as Reservas deverá primeiro ir ao nível de Base de Dados e
+no botão Índices criar um Índice principal ex: \textbf{Índice Reservas}, De seguida deverá
+criar um sub – índice ex: \textbf{Menus Reserva} para isso não deve checar a opção \textbf{Índice Principal}. 
+
+Dentro deste sub–índice deverá colocar a página com os produtos
+pretendidos para o nível das Reservas. Para isso clicar no botão \textbf{Estrutura} e na
+janela onde diz páginas colocar a página pretendida seleccionado-a e colocando-a
+através da seta para a direita. 
+Depois no Índice principal clicar no botão \textbf{Estrutura}.
+Na parte da janela onde diz Índices colocar o sub- índice \textbf{Menus Reserva} através
+da seta indicada para a direita. Fazer \textbf{OK} para guardar as alterações.
+
+Para que depois este apareça no Layer das Reservas deverá ir ao nível de Base de
+Dados, botão \textbf{Perfis}, e no separador \textbf{Cantinas,} na opção Índice para as Reservas
+deverá indicar então o Índice principal criado anteriormente \textbf{Índice Reservas}
+Não esquecer de o indicar para todos os perfis. No fim fazer \textbf{OK}.
+
+
+\section{Como criar uma reserva?}
+Quando se pretende criar uma reserva debitada no acto de emissão é necessário,
+durante a venda ou realização de um consumo a crédito, carregar no botão Reserva
+para aceder ao nível das Reservas onde poderá identificar o produto pretendido e a
+data do seu consumo. 
+
+Após completar esta operação, deverá gerar a reserva
+pressionando o botão Terminar – por vezes também identificado como Imprimir.
+
+Automaticamente voltará ao nível Mesa para terminar o registo.
+
+Quando pretende criar uma reserva que será debitada apenas no acto do consumo,
+esta é realizada de forma independente do registo do consumo. A qualquer
+momento poderá aceder ao nível Reservas, identificar o cliente através da
+passagem do cartão, ou introdução do PIN, carregando no botão PIN ou Cliente,
+identificar os dados da reserva e terminar ou imprimir.
+Em certas parametrizações, após um registo a aplicação pode abrir
+automaticamente o nível das reservas.
+
+\section{Como cancelar uma reserva?}
+Caso seja uma reserva pré paga será necessário criar uma nota de crédito, que
+anulará tanto a venda ou consumo como a reserva propriamente dita Em termos
+operacionais, a senha se existir deve ser recolhida pelo operador. Se refizer o
+documento a todas as linhas do documento original são importadas para o novo,
+incluindo a \textbf{Reserva}, mas a senha foi cancelada.
+
+Deverá então cancelar a reserva
+e adicionar de novo, fazendo o registo e forçando a criação da nova marcação e
+emissão de senha. No caso de uma reserva indicativa basta aceder ao nível
+Reserva, identificar o cliente através da passagem do cartão de cliente no MSR ou
+carregando no botão Código cliente e digitar o respectivo PIN e, de seguida
+identificar a data e sessão da reserva em causa, obtendo como resultado a
+visualização produto anteriormente reservado. Para o cancelar deverá selecciona-lo,
+e pressionar o botão Cancelar. 
+
+Para finalizar, deverá carregar no botão Terminar.
+
+\section{Como definir a data sugerida para uma reserva?}
+Aceder ao nível Gerente seleccionar o botão Definições Globais e no separador
+Cantinas pode definir se a data sugerida para a reserva é dinamicamente alterada
+para o próximo dia de trabalho ou se é fixa. Neste caso é necessário identificar a
+data pretendida.
+
+\section{Como verificar o estado das reservas?}
+Através do botão Estado das Reservas que se encontra no nível de Gerente. Aqui
+pode observar os produtos reservados que já foram consumidos e/ou aqueles por
+consumir. Através do botão Relatórios de Gestão, pode imprimir um Relatório de
+Reservas.
+
+\section{Como bloquear a criação de reservas?}
+Através do botão Bloquear Reservas no nível Gerente. Este bloqueia a realização de
+reservas para a sessão escolhida, a partir desse momento. Desta forma, no futuro
+não será possível efectuar mais reservas para essa mesma sessão.
+
+\section{Como fazer um controlo das reservas não consumidas?}
+No layer de Base de Dados no botão Definições Globais, no separador Cantinas
+deve activar a opção \textbf{Converte reservas não consumidas em consumos de cantina},
+Esta opção vai agarrar nas reservas não consumidas, após o fecho de sessão, de
+clientes com consumo a crédito e marca-as como consumidas e faz uma venda a
+dinheiro para a reserva. Esta opção funciona apenas com clientes com consumo a
+crédito.
+
+\chapter{Relatórios}
+
+O Koncepto poderá ser configurado de forma a permitir a emissão de relatórios para
+certos utilizadores. Por defeito, todos os relatórios estão disponíveis para
+utilizadores do tipo gerente, ou superior. Existem dois tipos de relatórios, disponíveis
+através de objectos diferentes: Relatórios Oficiais e Relatórios Gestão.
+
+Todos os relatórios são apresentados num ambiente gráfico comum, o qual se passa a
+descrever:
+
+À esquerda, apresenta-se o selector do Tipo de Relatório. Deverá ser seleccionado
+o relatório a apresentar.
+
+À direita, o período de tempo no qual tiveram início as sessões a incluir no relatório,
+e a listagem do tipo de sessões a incluir. Deverá ser indicado o intervalo de tempo a
+considerar, e os tipos de sessões a incluir.
+
+No fundo, um botão para imprimir o relatório com as características identificadas, e
+outro para sair.
+
+\section{Como emitir um relatório de gestão?}
+Aceder ao nível de Gerente, e pressionar o botão Relatórios Gestão, obtendo uma
+janela na qual deverá identificar o Período de Tempo e o Tipo de Sessões que teve
+início nesse período, que pretende incluir no relatório. Após estas opções, deverá
+seleccionar o relatório pretendido e carregar em Imprimir.
+
+Estão disponíveis os seguintes relatórios:
+\begin{itemize}
+\item Relatório de Empregados
+Discrimina todas as acções dos utilizadores por sessão, os
+cancelamentos, as anulações com e sem desperdício, os descontos as notas
+de crédito e vendas a dinheiro. Ainda indica o inicio e o fim de ponto com o
+total de horas.. Pode escolher tirar um relatório de todos os empregados ou
+um a um seleccionando o empregado pretendido.
+\item  Relatório de Produtos
+Apresenta todos os produtos vendidos e também por família de produtos.
+\item  Relatório de Vendas por Hora
+Disponibiliza o total de vendas a dinheiro por hora.
+\item  Relatório de Vendas por Máquina
+Apresenta as vendas feitas na máquina onde se encontra.
+\item  Relatório de Reservas (Cantina)
+Lista as reservas realizadas onde inclui a sessão, o produto e a quantidade.
+\item  Relatório de Vendas (Cantina)
+Exibe a listagem de consumos a crédito realizados onde inclui a sessão a
+data o produto e a quantidade.
+\item  A lista de Produtos
+Imprime uma lista com todos os produtos definidos.
+\end{itemize}
+
+\section{Como emitir um relatório para a contabilidade?}
+No nível Gerente, através do botão Relatórios Oficiais que imprime um relatório das
+vendas totais de um determinado período de tempo, este irá apresentar um conjunto
+de dados necessários à contabilidade. Nos relatórios oficiais, só pode aceder a
+informação relativa a sessões de trabalho encerradas. Os dados da sessão actual
+nunca são incluídos.
+
+Se esta não estiver encerrada, aparecerá uma mensagem de
+alerta a dizer que a operação não pode ser concluída .
+
+
+\chapter{Manutenção da Aplicação}
+
+\section{Como criar um produto?}
+
+No nível de Base de Dados, tocar no botão Produtos. Dentro da janela pressionar o
+botão Novo produto, aparecerá um teclado virtual onde deve atribuir um nome ao
+produto, este não deve conter apóstrofes pois não é compatível com o sistema.
+
+De seguida ainda nesse mesmo separador Comum deve indicar a que Família pertence
+esse produto, o Preço também deve ser indicado assim como a respectiva Taxa.
+
+Ainda nesse mesmo separador através do botão Propriedades pode mudar a cor do
+botão, a cor da letra entre outros, para se tornar mais apelativo e fácil de se
+localizar. 
+
+No separador Outros deverá indicar a Unidade do produto. Se pretender
+que este produto seja pedido deverá indicar a que Impressora Virtual ele pertence
+através do botão Definir, depois da impressora desejada se encontrar seleccionada.
+No separador Tipo deverá indicar o Tipo de produto , se é um produto normal, extra,
+entre outros. Por fim no último separador Páginas deverá indicar para que página irá
+o produto criado para isso deverá seleccionar a página pretendida e fazer Adicionar.
+
+No fim fazer OK para salvar a informação. 
+
+Esta ultima operação de incluir produtos
+nas páginas também pode ser feita através do botão Páginas, para isso deverá
+aceder ao botão Páginas, dentro da janela, seleccionar a página pretendida, e
+através do botão Produtos colocar o(os) produto(s) pretendidos para dentro da
+página. Para terminar fazer OK. 
+
+Também podemos definir famílias de produtos
+através do botão Famílias de Produtos para isso deverá clicar no botão Nova
+Família , aparecerá um teclado virtual onde deve dar um nome à família, de seguida
+deverá definir as propriedades da família tal como indicado na janela. No fim fazer
+OK para salvar as alterações.
+
+\section{Como adicionar um produto a uma página?}
+Através do botão Páginas no Layer de Base de Dados. Este irá abrir uma janela com
+todas as páginas existentes. Seleccionar a página pretendida e clicar no botão
+Produtos. Este irá abrir uma janela com todos os produtos existentes na Base de
+Dados do lado esquerdo da janela. Deverá então seleccionar o produto pretendido e
+clicar na seta para a direita para este ser inserido na página. No fim fazer OK para
+guardar a informação.
+
+\section{Como alterar o preço de um produto?}
+
+Através do botão Produtos no nível de Base de Dados. Este irá abrir uma janela com
+todos os produtos, deverá seleccionar o produto pretendido e pressionar em cima do
+preço para que este lhe abra uma janela onde poderá apagar e colocar o novo
+preço. No fim fazer OK para salvar as alterações. Também através do botão Mudar
+Preço, no nível de Mesas, poderá alterar o preço, mas só se este se encontrar
+activo.
+
+\section{Como criar uma nova página?}
+Através do botão Páginas no nível de Base de Dados. 
+Este irá abrir uma janela com
+todas as páginas existentes. Para criar uma nova terá que clicar no botão Nova
+Página. De seguida surgirá um teclado virtual onde deve dar um nome à nova
+página. 
+
+Para colocar os produtos dentro dessa página terá de clicar no botão
+Produtos. Este abrirá uma janela com todos os produtos existentes. Deverá
+seleccionar o produto pretendido e passá-lo um a um para a página através da seta
+que indica para o lado direito, se quiser tirar um produto da página terá de o
+seleccionar e clicar na seta indicada para a esquerda. 
+
+Também é permitida, através
+do botão Organização página a disposição dos botões segundo o seu critério. No fim
+fazer OK para salvar a informação introduzida. 
+
+Depois de criar a página deverá ir ao
+botão Índices no nível Base de Dados e colocar a página no Índice pretendido para
+que a operação anterior surta efeito senão a página não aparecerá. Para isso deverá
+na janela dos Índices, no separador Páginas, seleccionar o índice pretendido e
+colocar a página dentro desse índice. Para salvar as alterações fazer OK.
+
+\section{Como contar o Fundo de Maneio?}
+No nível Gerente através do botão Fundo de Maneio permite fazer o controlo do
+Fundo de Maneio. Este pode ser definido por máquina ou por utilizador.
+
+\section{Como aplicar um desconto a um produto?}
+Através do botão Generosidade que se encontra no nível de Gerente, podemos
+aplicar descontos sobre a venda, estes podem ser aplicados sobre o total da mesa
+e/ou produto a produto através de uma percentagem e/ou de um valor.
+
+\section{Como criar um Empregado?}
+Tocando no botão Empregados no nível Base de Dados, pode definir os funcionários
+da loja. Para além dos dados pessoais, deve definir os tipos de acções operativas
+permitidas e a integração, ou não, nas equipas de trabalho existentes.
+
+Estas definições não alteram o perfil de utilizador, mas restringem a utilização de
+funcionalidades nele disponíveis (ex: possibilidade de utilizar códigos para autentificar
+clientes).
+
+Quando pertence a uma equipa, o empregado assume por defeito as
+definições dela, mas cada empregado pode ser tratado de forma independente,
+através da definição das suas permissões próprias, que se sobrepõe às definições
+do grupo. Além destes dados, deverá ser indicado um perfil para cada um dos
+empregados.
+
+\section{Como criar uma Equipa?}
+Através do Botão Equipas no nível Base de Dados. Este irá abrir uma janela, onde
+para criar uma nova Equipa terá de tocar no botão Nova Equipa e dar um nome a
+esta. De seguida irá escolher as definições para essa nova Equipa. No fim fazer OK
+para guardar as alterações.
+
+\section{Como criar uma nova mesa?}
+
+Através do botão Mesa no nível de Base de Dados. Este irá abrir uma janela onde
+deverá carregar no botão Nova Mesa. Deverá dar um nome à mesa e fazer OK para
+guardar o registo. Para que depois a mesa apareça, deverá ir ao botão Zonas no
+nível Base de Dados e no separador Mesas deverá colocar a mesa na zona
+pretendida. No fim fazer OK para guardar a informação.
+
+\section{Como definir Sessões?}
+Através do botão Sessões no nível Base de Dados. Uma sessão permite a definição
+do preço pretendido por zona e é definida por períodos de tempo específicos e pelos
+empregados que nela operam. Para criar uma nova sessão deverá na janela de
+Sessões no nível Base de Dados clicar na opção Nova Sessão, dar um nome à nova
+sessão, de seguida no separador Intervalos de Tempo deverá indicar a hora de
+inicio e a hora de fim da sessão, e clicar na opção Adicionar Semana, para que este
+assuma esse horário para todos os dias da semana. No fim fazer OK para salvar as
+alterações.
+
+
+\chapter{Encerrar}
+\section{Como encerrar uma sessão?}
+Para encerrar uma sessão basta aceder ao nível de Gerente, no botão Gestor de
+Sessão seleccionar a sessão a fechar e clicar no botão Parar Sessão e fechar a
+respectiva janela.
+
+\section{Como desligar a máquina?}
+O POS deverá ser desligado através do software. No nível de utilizador encontrará
+um botão Desligar máquina, que ao pressionar fará aparecer uma mensagem a
+confirmar a operação. Confirmando, a máquina será desligada.
+
+Em certas configurações esta operação só pode ser efectuada após a validação de
+determinado tipo de utilizadores – geralmente um técnico, supervisor ou gerente.
+Em alguns modelos de equipamento, é necessário pressionar um botão físico
+(on/off) no hardware.
+
+Para mais informação consulte o manual do fabricante.
+
+
+\part{Dominando o Koncepto}
+
+% \chapter{Introdução}              
+\input{niveis}                 
+
+
+\begin{figure}
+\includegraphics[width=15cm]{../images/koncepto.png}
+\caption[Submanifold]{Representação gráfica do conceito de Níveis.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=15cm]{../images/konceptoTree.jpg}
+\caption[Submanifold]{Árvore de configurações do programa}
+\end{figure}
+
+
+
+
+\chapter{Utilizador} 
+
+O nível \textbf{utilizador} é o nível onde se inicia tudo, e é o estado nativo do programa.
+De um dos lados do ecrân estarão visiveis as outras áreas do programa, que serão desbloqueadas 
+consoante o perfil do funcionário que se identificar (por código numérico, leitor de cartões ou interface biomético)
+
+Neste nível poderão estar visíveis:
+\begin{itemize}
+\item o relógio
+\item lista de utilizadores
+\item o botão desligar máquina
+\item o botão fechar turno
+\item o botão bloquear níveis.
+\end{itemize}
+\begin{figure}
+\includegraphics[height=3in]{../images/user.png}
+\caption[Submanifold]{Exemplo de um interface de utilizador.}
+\end{figure}
+
+\section{Bloquear Níveis}
+
+Este botão tem uma importância vital na gestão e permite ao utilizador sair da sua área de trabalho
+impedindo assim que outros utilizadores possam consultar dados que normalmente não teriam acesso.
+
+Este botão obriga a que o próximo funcionário que queira utilizar o computador tenha de se identificar.
+
+Esta simples metodologia permite fazer leitura correctas nos relatórios de empregados (capítulo Gerente).
+
+\section{Fechar Turno}
+
+Este botão permite fazer o controlo de ponto de funcionário
+
+Ver capítulo gerente, fundo maneio
+Ver capítulo gerente, relatório de empregados
+
+
+\section{Desligar Máquina}
+
+Pressionando este botão, irá aparecer uma nova caixa de diálogo a perguntar se tem realmente a certeza
+de que pretende desligar o equipamento.
+
+Se confirmar, o computador irá dar iníco ao processo de encerramento, desligando o sistema progressivamente
+até ao momento em este ficará totalmente inactivo.
+
+\begin{boxedminipage}{\textwidth}
+        Caso o sistema não possua suporte a gestão de energia,
+	aguarde até aparecer a mensagem \textbf{System Halted} e então será seguro desligar o equipamento.
+\end{boxedminipage}
+
+
+
+\chapter{Zona}
+
+Entende-se por zonas as áreas que compõem o estabelecimento comercial.
+
+Cada zona é composta por mesas e tem regras específicas no que diz respeito ao comportamento de cada zona.
+
+
+
+
+\chapter{Mesa}
+
+\chapter{Gerente}
+
+\section{Relatórios}
+
+\subsection{Relatórios de Contabilidade}
+
+\begin{figure}
+\includegraphics[width=15cm]{../images/diagramaRelatOficiais.jpg}
+\caption[Submanifold]{Funcionamento dos Relatórios Oficiais.}
+\end{figure}
+
+No relatório de contabilidade figuram os elementos correspondentes à sessão de vendas selecionada.
+
+Será impossível extrair o relatório de contabilidade de uma sessão actualmente em curso ou de
+ um dia em que não tenha havido uma sessão a decorrer
+
+Para uma dada sessão válida, o relatório de contabilidade irá mostrar os determinados elementos:
+\begin{itemize}
+\item Dados da empresa
+\item Intervalo de Vendas a Dinheiro emitidas
+\item Intervalo de Notas de Crédito emitidas
+\item Total ilíquido facturado
+\item Total líquido facturado
+\item Total de IVA por taxa de Incidência
+\end{itemize}
+
+Opcionalmente pode-se adicionar outras informaçoes, como por exemplo: 
+\begin{itemize}
+\item Número de clientes
+\item Consumo médio realizado por cada cliente.
+\item etc.
+\end{itemize}
+
+
+\subsection{Relatórios de Gestão}
+
+\begin{figure}
+\includegraphics[width=15cm]{../images/diagramaRelatGestao.jpg}
+\caption[Submanifold]{Funcionamento dos Relatórios de Gestão.}
+\end{figure}
+
+Os relatórios de gestão, não vão fazer a pesquisa por sessão, mas por horário.
+
+Este facto poderá ser revelador de informações relacionada a períodos específicos.
+
+Por este relatório pode-se extrair informação como:
+\begin{itemize}
+\item Relatório de empregado
+\item Relatório de Produtos
+\item (...)
+\end{itemize}
+
+
+\chapter{Base de Dados}
+
+Neste nível permite-se fazer toda a configuração do comportamento do sistema e por isso o acesso
+ao mesmo aos funcionários deve ser feito de uma forma criteriosa.
+
+Aqui é possível proceder à criação e ou modificação de todas as variáveis de gestão, desde as 
+características dos artigos, a forma como aparecem no interface dos funcionários, o horário
+de funcionamento do sistema, os privilégios dos funcionários, gestão de cartões cliente, etc etc.
+\nopagebreak
+\begin{figure}
+\includegraphics[height=7cm]{../images/basedados.png}
+\caption[Submanifold]{O nível Base de Dados.}
+\end{figure}
+
+\newpage
+\section{Famílias}
+
+No botão Famílias, é-nos facultada a possibilidade de configurar famílias de produtos,
+facilitando assim o processo de criação de artigos posteriormente.
+
+
+Pode-se definir regras por grupo de artigos, como as taxas de IVA a aplicar 
+em determinados produtos, descontos máximos, direccionamento das ordens de impressão, etc.
+
+
+\begin{figure}
+\includegraphics[height=3in]{../images/familias.png}
+\caption[Submanifold]{Famílas}
+\end{figure}
+
+\textbf{NOTA:} é contudo possível parametrizar um artigo individualmente bastando para isso ir ao painel
+Produtos.
+
+Relacionado com este assunto:
+\begin{itemize}
+\item Tipos de Cliente
+\item Relatório de Produtos
+\end{itemize}
+
+\section{Produtos}
+
+\begin{figure}
+\includegraphics[height=3in]{../images/produtos.png}
+\caption[Submanifold]{Painel por defeito de Produtos.}
+\end{figure}
+
+\subsection{Comum}
+
+No separador “Comum" é onde se encontram as principais propriedades de cada artigo, nomeadamente:
+\begin{itemize}
+\item Tipo de Artigo - está relacionado com a categoria emque este artigo se insere. Um artigo pode-se categorizar como:
+\begin{itemize}
+\item Comum - Artigo de venda normal;
+\item Matéria Prima - Artigo de compra que será alvo de transformação
+\item Extra de Texto - artigos que se destinam a descrever uma propriedade do artigo, para informar a produção, sem afectar o custo final do mesmo. Por ex: “mal passado”
+\item Extra de Texto com preço - Artigos que complementam artigos ou grupo de artigos pré definidos e com custo associado. Por ex. “com ovo”
+\item Menu de Acerto - Permite a integração de todos os artigos de uma mesa num menu único com preço pré-definido.
+\item Menu pré-definido - Obriga o utilizador a escolher os componentes de uma ou mais listas pré-definidas impedindo a venda de outros artigos.
+\end {itemize}
+\item Família: diz respeito à família a que este artigo se insere.
+\item Descrição - o nome que é impresso nos documentos
+\item Nome - a designação do artigo que irá aparecer no botão - permite várias traduções.
+\item Preço - apresentado com três casas décimais, permite lidar mais facilmente com balanças. Cada artigo pode ter até 7 preços diferentes, podendo ser cada um atribuido a cada secção (ver Base de Dados -> Sessões)
+\item Código de Barras - Atribuindo um código ao artigo, pode-se fazer a leitura do mesmo com leitor específico, seja este um leitor de mesa, de pistola ou outro leitor similar.
+\item PLU - Price Look Up Code ou código de busca de artigo, pode ser usado para invocar artigos rapidamente por teclado numérico no ponto de venda ou remotamente.
+\item definição de “Pede quantidade"- quando activa irá pedir a quantidade de artigos a servir
+\item definição de “Pede preço Unitário" - quando activa pergunta qual o preço do artigo que se vai servir.
+\end {itemize}
+
+\subsection{Outros}
+\begin{figure}
+\includegraphics[height=3in]{../images/produtos2.png}
+\caption[Submanifold]{Tabulador Outros de Produtos.}
+\end{figure}
+
+
+Aqui define-se as características dos artigos, tais como a unidade de compra e destino da ordem de produção
+
+\subsection{Relações}
+\begin{figure}
+\includegraphics[height=3in]{../images/produtos3.png}
+\caption[Submanifold]{Tabulador Relações de Produtos.}
+\end{figure}
+
+
+Aqui configuram-se os produtos unidos para e os artigos que devem figurar em menu (caso o produto seja do tipo menu pré-definido)
+
+\subsection{Página}
+\begin{figure}
+\includegraphics[height=3in]{../images/produtos4.png}
+\caption[Submanifold]{Tabulador Páginas de Produtos.}
+\end{figure}
+
+
+Aqui definem-se a página ou as páginas onde o artigo deve estar apresentado.
+é possível o mesmo artigo estar apresentado em diversos locais. Por exemplo o artigo café, pode-se configurar para poder invocado nas páginas “rápidas”, “cafetaria” ou “sobremesas”.
+
+itens relacionados: páginas, famílias, sessões, zonas, reservas, relatório de produtos.
+
+\section{Clientes}
+
+\begin{figure}
+\includegraphics[width=15cm]{../images/diagramaClientes.jpg}
+\caption[Submanifold]{Estrutura de cliente especial.}
+\end{figure}
+
+
+A secção clientes diz respeito aos clientes "especiais". 
+
+Entende-se por cliente especial, todo aquele que é identificado e reconhecido pelo sistema. 
+
+Um cliente especial poder ter associado regras de consumo, tais como:
+\begin{itemize}
+\item ter as suas despesas transformadas em consumo a crédito (para pagamento posterior)
+\item ter descontos em determinados artigos
+\item não ter qualquer regra de pagamento, mas no entanto aparecem os seus elementos no documento de venda.
+\end{itemize}
+
+Para além disto, é possível no caso de haver descontos impor restrições de quantidade de artigos consumidos
+por dia, impedindo assim situações de possível abuso.
+
+itens relacionados: Tipos de cliente, tipos de cartão.
+
+\section{Feriados}
+
+Aqui configuram-se as partes referentes aos intervalos em que as reservas de cantinas não devem funcionar.
+
+Considerando os dias úteis definidos em sessões, esta função permite criar as excepções em que as cantinas não funcionam.
+
+itens relacionados: Sessões, reservas, estado das reservas.
+
+\section{Sessões}
+Em sessões pode-se definir os turnos de trabalho que se fazem por dia. As sessões podem ser parametrizadas para serem manuais ou automáticas 
+na secção de \textbf{Definições Globais}.
+
+Nas sessões pode-se definir:
+\begin{itemize}
+\item Os horários de funcionamento de cada turno;
+\item O preço a aplicar em cada zona em cada turnos;
+\item Os funcionários por turno;
+\end{itemize}
+
+itens relacionados: Produtos.
+
+
+\section{Perfis}
+
+Aqui se associam perfis gráficos a utilizadores e máquinas.
+
+Aqui pode-se determinar a língua, zonas e permissões que ficam vinculadas a cada utilizador ou máquina.
+
+itens relacionados: zonas, sessões, máquinas, reservas.
+
+\chapter{Aplicação}
+
+\chapter{Técnico}
+
+\begin{figure}
+\includegraphics[width=15cm]{../images/diagramaMaquinas.jpg}
+\caption[Submanifold]{Organização de hardware.}
+\end{figure}
+
+\section{Máquinas}
+
+Aqui definem-se os pontos de venda  e respectivos IPs.
+
+Neste ponto pode-se associar um perfil gráfico a uma máquina.
+
+Pode-se ainda criar as parametrizações de X64 que funcionam usando PLUs dos artigos.
+
+Pode-se por exemplo associar a regra de que a máquina "Restaurante" tem somente acesso às mesas da zona restaurante. 
+
+itens relacionados: perfis, produtos.
+
+\section{Dispositivos}
+
+Aqui definem-se todos os periféricos e definem-se onde ficam ligados a cada equipamento.
+
+Pode-se criar impressoras, \emph{displays} de cliente, balanças, gavetas de valores, leitores vários, etc
+
+Este quadro é separado por quatro quadros relacionados: 
+\begin{itemize}
+\item máquinas
+\item dispositivo
+\item tipo de ligação
+\item configuração da ligação.
+\end{itemize}
+
+As parametrizações de baixo nível, tais como configurações de porta série são feitas a nível de sistema operativo.
+
+selecionando um periférico, pode-se alterar o nome do mesmo, e caso seja um dispositivo de entrada --- como é o caso 
+de um leitor biométrico --- é possível criar a expressão regular para validar o valor lido.
+
+Caso haja um sistema de entrada de interface PS2 (entrada convencionalmente utilizada pelo teclado), 
+a expressão regular deverá ser utilizada em \textbf{Definições Globais}, afectando todos os equipamentos da rede.
+
+itens relacionados: Definições Globais.
+
+\section{Impressoras Virtuais}
+
+Com impressoras virtuais entende-se como o papel que uma impressora toma no desenrolar das suas tarefas num espaço comercial.
+
+Pode ser cómodo designar uma impressora com um nome específico, criando um nível de abstracção do sistema informático
+permitindo ao gerente fazer o redireccionamento de pedidos de uma forma expedita sem quaisquer conhecimentos técnicos.
+
+itens relacionados: Ligação de Impressoras, Dispositivos, Impressão de Documentos.
+
+\section{Ligação de Impressoras}
+
+A partir daqui pode-se definir que impressoras imprimem consoante o local em que nos encontramos.
+
+Pode-se definir que se estou num local de transformação, e se fizer um pedido de um produto transformado neste local,
+não faz sentido que haja emissão de papel.
+
+Por outro lado se estiver longe do local de transformação, deverá sair sempre um pedido na zona de transformação, 
+identificando o local para onde se destina e o funcionário que fez a requisição.
+
+itens relacionados: Impressoras Virtuais, Dispositivos, Impressão de Documentos.
+
+\section{Impressão de Documentos}
+
+Pode-se aqui definir em que impressora deverá ser impresso cada documento.
+
+itens relacionados: Impressoras Virtuais, Ligação de Impressoras, Dispositivos.
+
+\section{Upload de logo para Impressora}
+
+Para exportar uma imagem para a impressora, é necessário satisfazer as seguintes condições:
+\begin{itemize}
+\item a imagem esteja em formato \emph{bmp};
+\item a imagem  esteja a duas cores;
+\item o ficheiro esteja no directório apropriado do software.
+\end{itemize}
+
+
+\chapter{Reservas}
+
+
+\end{document}
